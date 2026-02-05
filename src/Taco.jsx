@@ -7,16 +7,33 @@ import {
   useMutation,
   // useQueryClient,
 } from "@tanstack/react-query";
+// import { useContext } from "react";
+// import { AppContext } from "./AppContext";
+import { v4 as uuidv4 } from "uuid";
 
 import "./styles.css";
 
+function getCartUuid() {
+  let cartid = sessionStorage.getItem("cartUuid");
+  if (cartid === null) {
+    sessionStorage.setItem("cartUuid", uuidv4());
+    cartid = sessionStorage.getItem("cartUuid");
+  }
+  // console.log(cartid);
+  return cartid;
+}
+
 export function Taco() {
+  // const { state } = useContext(AppContext);
   // const navigate = useNavigate();
   // const queryClient = useQueryClient();
   const [inputs, setInputs] = useState({});
   const [data, setData] = useState({
+    // uuid: state.uuid,
+    uuid: getCartUuid(),
     name: "My Taco",
     ingredients: [],
+    qty: 1,
   });
 
   const { mutate } = useMutation({
@@ -27,8 +44,11 @@ export function Taco() {
       // clear form
       setInputs({});
       setData({
+        // uuid: state.uuid,
+        uuid: getCartUuid(),
         name: "My Taco",
         ingredients: [],
+        qty: 1,
       });
       // go to taco detail
       // navigate("/taco/" + resdata.id);
@@ -96,7 +116,9 @@ export function Taco() {
     }
 
     // console.log(data);
-    mutate(data);
+    if (data.ingredients.length > 0) {
+      mutate(data);
+    }
   };
 
   return (
@@ -255,6 +277,8 @@ export function Taco() {
           /> */}
           <br />
           <button>Submit Your Taco</button>
+          <br />
+          <br />
         </div>
       </form>
     </>

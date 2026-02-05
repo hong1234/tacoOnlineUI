@@ -5,12 +5,13 @@
 import { Outlet, Routes, Route, Link } from "react-router";
 // import { Header } from "./Header";
 import { Taco } from "./Taco";
-import { MyForm } from "./MyForm";
-import Order from "./Order";
-import Detail from "./Detail";
+// import { MyForm } from "./MyForm";
+// import Order from "./Order";
+// import Detail from "./Detail";
+import Cart from "./Cart";
 
 function Home() {
-  return <h3>Home</h3>;
+  return <h1>Home</h1>;
 }
 
 function App() {
@@ -22,15 +23,18 @@ function App() {
       <Outlet /> */}
       <nav>
         <Link to="/">Home</Link> | <Link to="/taco">Taco</Link> |{" "}
-        <Link to="/order/1">Order</Link> | <Link to="/form">Form</Link>
+        <Link to="/cart">Cart</Link>
+        {/* <Link to="/order/1">Order</Link> | <Link to="/form">Form</Link> */}
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/taco" element={<Taco />} />
-        <Route path="/taco/:tacoId" element={<Detail />} />
-        <Route path="/order/:orderId" element={<Order />} />
-        <Route path="/form" element={<MyForm />} />
+        {/* <Route path="/taco/:tacoId" element={<Detail />} /> */}
+        <Route path="/cart" element={<Cart />} />
+        {/* <Route path="/cart/:cartId" element={<Cart />} /> */}
+        {/* <Route path="/order/:orderId" element={<Order />} /> */}
+        {/* <Route path="/form" element={<MyForm />} /> */}
       </Routes>
     </>
   );
