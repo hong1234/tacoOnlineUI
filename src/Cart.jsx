@@ -63,11 +63,13 @@ const Cart = () => {
             <h4>
               Taco-Id: {taco.id} | Qty: {taco.qty}
             </h4>
-            {taco.ingredients.map((ing) => (
-              <div key={ing.id}>
-                {ing.name} - {ing.ingredientType} <br />
-              </div>
-            ))}
+            {taco.ingredients
+              .sort((a, b) => a.id - b.id)
+              .map((ing) => (
+                <div key={ing.id}>
+                  {ing.name} - {ing.ingredientType} <br />
+                </div>
+              ))}
           </div>
         ))}
       </div>

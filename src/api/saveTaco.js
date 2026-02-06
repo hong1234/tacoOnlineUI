@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const tacoUrl = "http://localhost:8000/api/v1/taco/design";
+const tacoUrl = "http://localhost:8000/api/v1/cart/addtaco";
 
 export async function saveTaco(taco) {
   const options = {
