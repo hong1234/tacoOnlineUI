@@ -1,10 +1,10 @@
 // import { useParams } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import { getCart } from "./api/getCart";
 // import { useContext } from "react";
 // import { AppContext } from "./AppContext";
-// import { useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { v4 as uuidv4 } from "uuid";
+import { useQuery } from "@tanstack/react-query";
+import { getCart } from "./api/getCart";
 
 function getCartUuid() {
   let cartid = sessionStorage.getItem("cartUuid");
@@ -17,16 +17,23 @@ function getCartUuid() {
 }
 
 const Cart = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const { state } = useContext(AppContext);
   // const { cartId } = useParams();
+
+  const checkout = (e) => {
+    e.preventDefault();
+    // refetch();
+    navigate("/order");
+  };
+
   const {
     isLoading,
     // isError,
     data: cart,
   } = useQuery({
     queryKey: ["cart"],
-    queryFn: () => getCart(getCartUuid()), // getCart(state.uuid),
+    queryFn: () => getCart(getCartUuid()),
   });
 
   if (isLoading || cart === undefined) {
@@ -60,19 +67,26 @@ const Cart = () => {
         {/* <button onClick={() => mutate(productId)}>add to cart</button> */}
         {cart.tacos.map((taco) => (
           <div key={taco.id}>
-            <h4>
-              Taco-Id: {taco.id} | Qty: {taco.qty}
-            </h4>
+            <h4>Taco-Id: {taco.id}</h4>
+            Qty: {taco.qty} <br />
+            UnitPrice: {taco.unitPrice} $ <br />
+            Ingredients:
             {taco.ingredients
               .sort((a, b) => a.id - b.id)
               .map((ing) => (
                 <div key={ing.id}>
-                  {ing.name} - {ing.ingredientType} <br />
+                  - {ing.name} - {ing.ingredientType} <br />
                 </div>
               ))}
           </div>
         ))}
       </div>
+      <br />
+      {cart.tacos.length > 0 ? (
+        <button type="button" className="btn btn-secondary" onClick={checkout}>
+          Checkout
+        </button>
+      ) : null}
     </div>
   );
 };

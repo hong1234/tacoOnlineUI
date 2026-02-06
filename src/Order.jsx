@@ -1,7 +1,3 @@
-// export function Order() {
-//   return <h3>Order</h3>;
-// }
-
 import { useParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { getOrder } from "./api/getOrder";
@@ -27,18 +23,27 @@ const Order = () => {
       <div className="col-12 col-sm-8 col-md-8">
         {/* <div className="bg-primary text-white text-center p-1" /> */}
         {/* <p className="card-title fw-bold">{taco.id}</p> */}
-        <h3>Order-Id: {order.id}</h3>
+        {/* <h3>Order-Id: {order.id}</h3> */}
+        <h3>OrderId: {order.uuid}</h3>
+        Kunde: {order.deliveryName} <br />
+        Adresse: {order.deliveryStreet} - {order.deliveryCity} <br />
+        Ordered at: {order.placedAt} <br />
+        Items-Price: {order.itemsPrice} <br />
+        Shipment-Price: {order.shipmentPrice} <br />
+        Total-Price: {order.totalPrice} <br />
         {/* <p className="card-text">{product.unitPrice} $</p> */}
         {/* <button onClick={handleAddItem}>add to cart</button> */}
         {/* <button onClick={() => mutate(productId)}>add to cart</button> */}
-        {order.tacos.map((taco) => (
-          <div key={taco.id}>
-            <h4>Taco-Id: {taco.id}</h4>
-            {taco.ingredients.map((ing) => (
-              <div key={ing.id}>
-                {ing.name} - {ing.ingredientType} <br />
-              </div>
-            ))}
+        {order.items.map((item) => (
+          <div key={item.id}>
+            <h4>Item-Id: {item.id}</h4>
+            {item.ingredients
+              .sort((a, b) => a.id - b.id)
+              .map((ing) => (
+                <div key={ing.id}>
+                  {ing.name} - {ing.ingredientType} <br />
+                </div>
+              ))}
           </div>
         ))}
       </div>

@@ -4,10 +4,11 @@
 // import "./App.css";
 import { Outlet, Routes, Route, Link } from "react-router";
 // import { Header } from "./Header";
-import { Taco } from "./Taco";
 // import { MyForm } from "./MyForm";
-// import Order from "./Order";
 // import Detail from "./Detail";
+import { Taco } from "./Taco";
+import Order from "./Order";
+import { OrderForm } from "./OrderForm";
 import Cart from "./Cart";
 
 function Home() {
@@ -33,7 +34,8 @@ function App() {
         {/* <Route path="/taco/:tacoId" element={<Detail />} /> */}
         <Route path="/cart" element={<Cart />} />
         {/* <Route path="/cart/:cartId" element={<Cart />} /> */}
-        {/* <Route path="/order/:orderId" element={<Order />} /> */}
+        <Route path="/order" element={<OrderForm />} />
+        <Route path="/order/:orderId" element={<Order />} />
         {/* <Route path="/form" element={<MyForm />} /> */}
       </Routes>
     </>

@@ -44,7 +44,6 @@ export function Taco() {
       // clear form
       setInputs({});
       setData({
-        // uuid: state.uuid,
         uuid: getCartUuid(),
         name: "My Taco",
         ingredients: [],
@@ -123,7 +122,7 @@ export function Taco() {
 
   return (
     <>
-      <h1>Design your taco!</h1>
+      <h1>Design your BanhMy!</h1>
       <img src="/images/TacoCloud.png" />
       <form onSubmit={handleSubmit}>
         <div className="grid">
@@ -276,7 +275,7 @@ export function Taco() {
             onChange={handleChange}
           /> */}
           <br />
-          <button>Submit Your Taco</button>
+          <button>Add Your BanhMy to Cart</button>
           <br />
           <br />
         </div>
