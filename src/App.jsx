@@ -23,7 +23,7 @@ function App() {
       {/* <Header />
       <Outlet /> */}
       <nav>
-        <Link to="/">Home</Link> | <Link to="/taco">Taco</Link> |{" "}
+        <Link to="/">Home</Link> | <Link to="/taco">BanhMy</Link> |{" "}
         <Link to="/cart">Cart</Link>
         {/* <Link to="/order/1">Order</Link> | <Link to="/form">Form</Link> */}
       </nav>

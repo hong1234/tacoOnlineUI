@@ -2,19 +2,9 @@
 // import { useContext } from "react";
 // import { AppContext } from "./AppContext";
 import { useNavigate } from "react-router";
-import { v4 as uuidv4 } from "uuid";
+import { getCartUuid } from "./api/getCartUuid";
 import { useQuery } from "@tanstack/react-query";
 import { getCart } from "./api/getCart";
-
-function getCartUuid() {
-  let cartid = sessionStorage.getItem("cartUuid");
-  if (cartid === null) {
-    sessionStorage.setItem("cartUuid", uuidv4());
-    cartid = sessionStorage.getItem("cartUuid");
-  }
-  // console.log(cartid);
-  return cartid;
-}
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -61,7 +51,7 @@ const Cart = () => {
         {/* <div className="bg-primary text-white text-center p-1" /> */}
         {/* <p className="card-title fw-bold">{taco.id}</p> */}
         <h3>
-          Cart | uuId= {cart.uuid} | Id= {cart.id}
+          Cart Id={cart.id} | uuId={cart.uuid}
         </h3>
         {/* <button onClick={handleAddItem}>add to cart</button> */}
         {/* <button onClick={() => mutate(productId)}>add to cart</button> */}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 // import { useNavigate } from "react-router";
 // import { getIngredients } from "./api/getIngredients";
+import { getCartUuid } from "./api/getCartUuid";
 import { saveTaco } from "./api/saveTaco";
 import {
   // useQuery
@@ -9,19 +10,8 @@ import {
 } from "@tanstack/react-query";
 // import { useContext } from "react";
 // import { AppContext } from "./AppContext";
-import { v4 as uuidv4 } from "uuid";
 
 import "./styles.css";
-
-function getCartUuid() {
-  let cartid = sessionStorage.getItem("cartUuid");
-  if (cartid === null) {
-    sessionStorage.setItem("cartUuid", uuidv4());
-    cartid = sessionStorage.getItem("cartUuid");
-  }
-  // console.log(cartid);
-  return cartid;
-}
 
 export function Taco() {
   // const { state } = useContext(AppContext);
@@ -75,12 +65,6 @@ export function Taco() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(inputs); // ok
-    // let fillings = "";
-    // alert(`${inputs.firstname} wants a burger with ${fillings}`);
-
-    // setData((data) => ({ ...data, name: inputs.taconame }));
-    // setInputs(values => ({...values, [name]: value}))
 
     if (inputs.FLTO) {
       // setData((data) => ({ ...data, ingredients: data.ingredients.push(1) }));

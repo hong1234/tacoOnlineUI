@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { v4 as uuidv4 } from "uuid";
+import { getCartUuid, refreshCartUuid } from "./api/getCartUuid";
 import { saveOrder } from "./api/saveOrder";
 import {
   // useQuery
@@ -9,16 +9,6 @@ import {
 } from "@tanstack/react-query";
 
 import "./styles.css";
-
-function getCartUuid() {
-  let cartid = sessionStorage.getItem("cartUuid");
-  if (cartid === null) {
-    sessionStorage.setItem("cartUuid", uuidv4());
-    cartid = sessionStorage.getItem("cartUuid");
-  }
-  // console.log(cartid);
-  return cartid;
-}
 
 export function OrderForm() {
   const navigate = useNavigate();
@@ -31,12 +21,10 @@ export function OrderForm() {
     onSuccess: (resdata) => {
       console.log(resdata);
       // queryClient.invalidateQueries(["products"]);
-      // clear form
-      // setInputs({});
-      // sessionStorage.removeItem("cartUuid");
-      // sessionStorage.clear();
-      sessionStorage.setItem("cartUuid", uuidv4());
-      console.log(sessionStorage.getItem("cartUuid"));
+      // setInputs({}); // clear form
+      refreshCartUuid();
+      console.log(getCartUuid());
+
       navigate("/order/" + resdata.uuid);
     },
     onError: (err) => {
@@ -56,7 +44,6 @@ export function OrderForm() {
     event.preventDefault();
     console.log(inputs);
     mutate(inputs);
-    // navigate("/order/" + getCartUuid());
   };
 
   return (
