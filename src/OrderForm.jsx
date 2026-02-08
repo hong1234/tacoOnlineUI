@@ -65,7 +65,7 @@ export default function OrderForm() {
           />
         </label>
         <label htmlFor="deliveryStreet">
-          Street address: <br />
+          Street House-Nr: <br />
           <input
             className="block w-80 appearance-none rounded border border-red-500 bg-gray-200 px-2 py-2 leading-tight"
             type="text"

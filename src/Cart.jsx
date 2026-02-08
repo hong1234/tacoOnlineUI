@@ -1,7 +1,7 @@
-// import { useParams } from "react-router";
-import { Link } from 'react-router';
 // import { useContext } from "react";
 // import { AppContext } from "./AppContext";
+// import { useParams } from "react-router";
+import { Link } from 'react-router';
 import { useNavigate } from 'react-router';
 import { getCartUuid } from './api/cartUuid';
 import { useQuery } from '@tanstack/react-query';
@@ -89,13 +89,6 @@ const Cart = () => {
               <br />
               <Link to="/taco">
                 <p className="font-bold text-gray-600 underline">make more BanhMy</p>
-                {/* make more BanhMy */}
-                {/* <button
-                  className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-                  type="button"
-                >
-                  make more BanhMy
-                </button> */}
               </Link>
               <br />
               <button
