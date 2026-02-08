@@ -86,7 +86,7 @@ export default function OrderForm() {
         </label>
         {/* <h3>Here's how I'll pay...</h3> */}
         <label htmlFor="ccNumber">
-          Credit Card #:
+          Tel-Nummer:
           <input
             className="block w-80 appearance-none rounded border border-red-500 bg-gray-200 px-2 py-2 leading-tight"
             type="text"

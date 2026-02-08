@@ -26,11 +26,18 @@ const Order = () => {
       <div className="">
         {/* <h3>Order-Id: {order.id}</h3> */}
         <h1 className="font-heading text-2xl font-bold">Thank for your Order</h1>
-        <p className="mb-4 text-base text-gray-600">Order-ID: {order.uuid}</p>
+        {/* <p className="mb-4 text-base text-gray-600">
+          
+        </p> */}
+        Order-ID: {order.uuid}
+        <br />
+        ordered at: {order.placedAt}
+        {/* <p className="mb-4 text-base text-gray-600">Ordered at: {order.placedAt}</p> */}
+        <br />
         <br />
         <p className="font-bold">Kunde: {order.deliveryName}</p>
         Adresse: {order.deliveryStreet} - {order.deliveryCity} <br />
-        Ordered at: {order.placedAt} <br />
+        Tel-Nummer: {order.ccNumber} <br />
         <br />
         <p className="font-bold">Total-Price: {order.totalPrice}</p>
         Items-Price: {order.itemsPrice} <br />
