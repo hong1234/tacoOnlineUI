@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState } from 'react';
 // import { useNavigate } from "react-router";
 // import { getIngredients } from "./api/getIngredients";
-import { getCartUuid } from "./api/getCartUuid";
-import { saveTaco } from "./api/saveTaco";
+import { getCartUuid } from './api/cartUuid';
+import { saveTaco } from './api/saveTaco';
 import {
   // useQuery
   useMutation,
   // useQueryClient,
-} from "@tanstack/react-query";
+} from '@tanstack/react-query';
 // import { useContext } from "react";
 // import { AppContext } from "./AppContext";
 
-import "./styles.css";
+// import './styles.css';
 
-export function Taco() {
+export default function Taco() {
   // const { state } = useContext(AppContext);
   // const navigate = useNavigate();
   // const queryClient = useQueryClient();
@@ -21,7 +21,7 @@ export function Taco() {
   const [data, setData] = useState({
     // uuid: state.uuid,
     uuid: getCartUuid(),
-    name: "My Taco",
+    name: 'My Taco',
     ingredients: [],
     qty: 1,
   });
@@ -35,7 +35,7 @@ export function Taco() {
       setInputs({});
       setData({
         uuid: getCartUuid(),
-        name: "My Taco",
+        name: 'My Taco',
         ingredients: [],
         qty: 1,
       });
@@ -58,7 +58,7 @@ export function Taco() {
 
   const handleChange = (e) => {
     const target = e.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
     setInputs((values) => ({ ...values, [name]: value }));
   };
@@ -106,12 +106,12 @@ export function Taco() {
 
   return (
     <>
-      <h1>Design your BanhMy!</h1>
+      <h1 className="font-heading text-2xl font-bold">Design your BanhMy!</h1>
       <img src="/images/TacoCloud.png" />
       <form onSubmit={handleSubmit}>
         <div className="grid">
           <div className="ingredient-group" id="wrap">
-            <h3>Designate your wrap</h3>
+            <h3 className="text-lg/6 font-bold">Designate your wrap</h3>
             <div key="FLTO">
               <input
                 id="1"
@@ -120,7 +120,7 @@ export function Taco() {
                 name="FLTO"
                 checked={inputs.FLTO || false}
                 onChange={handleChange}
-              />
+              />{' '}
               <span>Flour Tortilla</span>
               <br />
             </div>
@@ -132,14 +132,14 @@ export function Taco() {
                 name="COTO"
                 checked={inputs.COTO || false}
                 onChange={handleChange}
-              />
+              />{' '}
               <span>Corn Tortilla</span>
               <br />
             </div>
           </div>
 
           <div className="ingredient-group" id="protein">
-            <h3>Pick your protein</h3>
+            <h3 className="text-lg/6 font-bold">Pick your protein</h3>
             <div key="GRBF">
               <input
                 id="3"
@@ -148,7 +148,7 @@ export function Taco() {
                 name="GRBF"
                 checked={inputs.GRBF || false}
                 onChange={handleChange}
-              />
+              />{' '}
               <span>Ground Beef</span>
               <br />
             </div>
@@ -160,14 +160,14 @@ export function Taco() {
                 name="CARN"
                 checked={inputs.CARN || false}
                 onChange={handleChange}
-              />
+              />{' '}
               <span>Carnitas</span>
               <br />
             </div>
           </div>
 
           <div className="ingredient-group" id="veggies">
-            <h3>Determine your veggies</h3>
+            <h3 className="text-lg/6 font-bold">Determine your veggies</h3>
             <div key="TMTO">
               <input
                 id="5"
@@ -176,7 +176,7 @@ export function Taco() {
                 name="TMTO"
                 checked={inputs.TMTO || false}
                 onChange={handleChange}
-              />
+              />{' '}
               <span>Diced Tomatoes</span>
               <br />
             </div>
@@ -188,14 +188,14 @@ export function Taco() {
                 name="LETC"
                 checked={inputs.LETC || false}
                 onChange={handleChange}
-              />
+              />{' '}
               <span>Lettuce</span>
               <br />
             </div>
           </div>
 
           <div className="ingredient-group" id="cheese">
-            <h3>Choose your cheese</h3>
+            <h3 className="text-lg/6 font-bold">Choose your cheese</h3>
             <div key="CHED">
               <input
                 id="7"
@@ -204,7 +204,7 @@ export function Taco() {
                 name="CHED"
                 checked={inputs.CHED || false}
                 onChange={handleChange}
-              />
+              />{' '}
               <span>Cheddar</span>
               <br />
             </div>
@@ -216,14 +216,14 @@ export function Taco() {
                 name="JACK"
                 checked={inputs.JACK || false}
                 onChange={handleChange}
-              />
+              />{' '}
               <span>Monterrey Jack</span>
               <br />
             </div>
           </div>
 
           <div className="ingredient-group" id="sauce">
-            <h3>Select your sauce</h3>
+            <h3 className="text-lg/6 font-bold">Select your sauce</h3>
             <div key="SLSA">
               <input
                 id="9"
@@ -232,7 +232,7 @@ export function Taco() {
                 name="SLSA"
                 checked={inputs.SLSA || false}
                 onChange={handleChange}
-              />
+              />{' '}
               <span>Salsa</span>
               <br />
             </div>
@@ -244,7 +244,7 @@ export function Taco() {
                 name="SRCR"
                 checked={inputs.SRCR || false}
                 onChange={handleChange}
-              />
+              />{' '}
               <span>Sour Cream</span>
               <br />
             </div>
@@ -259,7 +259,9 @@ export function Taco() {
             onChange={handleChange}
           /> */}
           <br />
-          <button>Add Your BanhMy to Cart</button>
+          <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
+            Add Your BanhMy to Cart
+          </button>
           <br />
           <br />
         </div>
