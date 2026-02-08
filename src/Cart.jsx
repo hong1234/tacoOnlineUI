@@ -61,8 +61,8 @@ const Cart = () => {
               <div className="grid gap-4 md:grid-cols-3">
                 {cart.tacos.map((taco) => (
                   <div key={taco.id} className="relative rounded-xl border p-8">
-                    <h4 className="font-bold">Taco-Id: {taco.id}</h4>
-                    Qty: {taco.qty} <br />
+                    <h4 className="font-bold">BanhMy-ID: {taco.id}</h4>
+                    Quantity: {taco.qty} <br />
                     UnitPrice: {taco.unitPrice} $ <br />
                     Ingredients:
                     {taco.ingredients
@@ -87,6 +87,17 @@ const Cart = () => {
                 ))}
               </div>
               <br />
+              <Link to="/taco">
+                <p className="font-bold text-gray-600 underline">make more BanhMy</p>
+                {/* make more BanhMy */}
+                {/* <button
+                  className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+                  type="button"
+                >
+                  make more BanhMy
+                </button> */}
+              </Link>
+              <br />
               <button
                 type="button"
                 className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
@@ -101,7 +112,7 @@ const Cart = () => {
                 className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
                 type="button"
               >
-                Please make one BanhMy
+                make your BanhMy
               </button>
             </Link>
           )

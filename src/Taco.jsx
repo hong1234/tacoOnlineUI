@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import { useNavigate } from "react-router";
+import { useNavigate } from 'react-router';
 // import { getIngredients } from "./api/getIngredients";
 import { getCartUuid } from './api/cartUuid';
 import { saveTaco } from './api/saveTaco';
@@ -15,7 +15,7 @@ import {
 
 export default function Taco() {
   // const { state } = useContext(AppContext);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const queryClient = useQueryClient();
   const [inputs, setInputs] = useState({});
   const [data, setData] = useState({
@@ -39,8 +39,8 @@ export default function Taco() {
         ingredients: [],
         qty: 1,
       });
-      // go to taco detail
-      // navigate("/taco/" + resdata.id);
+      // go to cart
+      navigate('/cart');
     },
     onError: (err) => {
       console.error(err);

@@ -26,9 +26,6 @@ const Order = () => {
       <div className="">
         {/* <h3>Order-Id: {order.id}</h3> */}
         <h1 className="font-heading text-2xl font-bold">Thank for your Order</h1>
-        {/* <p className="mb-4 text-base text-gray-600">
-          
-        </p> */}
         Order-ID: {order.uuid}
         <br />
         ordered at: {order.placedAt}
@@ -45,7 +42,7 @@ const Order = () => {
         <br />
         {order.items.map((item) => (
           <div key={item.id}>
-            <h4>Item-Id: {item.id}</h4>
+            <h4>BanhMy-ID: {item.id}</h4>
             {item.ingredients
               .sort((a, b) => a.id - b.id)
               .map((ing) => (
