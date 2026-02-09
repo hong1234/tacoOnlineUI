@@ -52,9 +52,9 @@ const Cart = () => {
       {/* <button onClick={() => mutate(productId)}>add to cart</button> */}
       <div className="">
         <h1 className="font-heading text-2xl font-bold">Cart</h1>
-        <p className="mb-4 text-base text-gray-600">
-          Cart-ID={cart.id} | uuID={cart.uuid}
-        </p>
+        Cart-ID={cart.id} | uuID={cart.uuid}
+        <br />
+        <br />
         {
           cart.tacos.length > 0 ? (
             <div>
@@ -88,7 +88,7 @@ const Cart = () => {
               </div>
               <br />
               <Link to="/taco">
-                <p className="font-bold text-gray-600 underline">make more BanhMy</p>
+                <p className="md-4 font-bold text-gray-600 underline">make more BanhMy</p>
               </Link>
               <br />
               <button

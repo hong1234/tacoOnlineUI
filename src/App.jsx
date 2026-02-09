@@ -21,7 +21,7 @@ function App() {
       {/* <Header />
       <Outlet /> */}
       <header className="bg-blue-500 p-4">
-        <nav className="items-center justify-between p-2 text-white">
+        <nav className="items-center justify-between p-2 font-bold text-white">
           <Link to="/">Home</Link> | <Link to="/taco">BanhMy</Link> | <Link to="/cart">Cart</Link>
           {/* <Link to="/order/1">Order</Link> | <Link to="/form">Form</Link> */}
         </nav>

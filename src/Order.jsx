@@ -29,7 +29,6 @@ const Order = () => {
         Order-ID: {order.uuid}
         <br />
         ordered at: {order.placedAt}
-        {/* <p className="mb-4 text-base text-gray-600">Ordered at: {order.placedAt}</p> */}
         <br />
         <br />
         <p className="font-bold">Kunde: {order.deliveryName}</p>

@@ -50,7 +50,7 @@ export default function OrderForm() {
     <>
       <form onSubmit={handleSubmit}>
         <h1 className="font-heading text-2xl font-bold">Order your BanhMy creations!</h1>
-        <img src="/images/TacoCloud.png" />
+        <img className="h-48 w-96 object-contain" src="/images/TacoCloud.png" />
         <p className="mb-4 text-base text-gray-600">Deliver my BanhMy masterpieces to...</p>
         {/* <input type="hidden" id="uuid" name="uuid" value="xxxxxx"></input> */}
 

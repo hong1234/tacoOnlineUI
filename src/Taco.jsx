@@ -107,7 +107,7 @@ export default function Taco() {
   return (
     <>
       <h1 className="font-heading text-2xl font-bold">Design your BanhMy!</h1>
-      <img src="/images/TacoCloud.png" />
+      <img className="h-48 w-96 object-contain" src="/images/TacoCloud.png" />
       <form onSubmit={handleSubmit}>
         <div className="grid">
           <div className="ingredient-group" id="wrap">
