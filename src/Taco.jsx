@@ -97,6 +97,12 @@ export default function Taco() {
     if (inputs.SRCR) {
       setData({ ...data, ingredients: data.ingredients.push(10) });
     }
+    if (inputs.BEER) {
+      setData({ ...data, ingredients: data.ingredients.push(11) });
+    }
+    if (inputs.COCA) {
+      setData({ ...data, ingredients: data.ingredients.push(12) });
+    }
 
     // console.log(data);
     if (data.ingredients.length > 0) {
@@ -121,7 +127,7 @@ export default function Taco() {
                 checked={inputs.FLTO || false}
                 onChange={handleChange}
               />{' '}
-              <span>Flour Tortilla</span>
+              <span>Flour Tortilla (3.99 $)</span>
               <br />
             </div>
             <div key="COTO">
@@ -133,7 +139,7 @@ export default function Taco() {
                 checked={inputs.COTO || false}
                 onChange={handleChange}
               />{' '}
-              <span>Corn Tortilla</span>
+              <span>Corn Tortilla (3.99 $)</span>
               <br />
             </div>
           </div>
@@ -149,7 +155,7 @@ export default function Taco() {
                 checked={inputs.GRBF || false}
                 onChange={handleChange}
               />{' '}
-              <span>Ground Beef</span>
+              <span>Ground Beef (1.99 $)</span>
               <br />
             </div>
             <div key="CARN">
@@ -161,7 +167,7 @@ export default function Taco() {
                 checked={inputs.CARN || false}
                 onChange={handleChange}
               />{' '}
-              <span>Carnitas</span>
+              <span>Carnitas (1.99 $)</span>
               <br />
             </div>
           </div>
@@ -177,7 +183,7 @@ export default function Taco() {
                 checked={inputs.TMTO || false}
                 onChange={handleChange}
               />{' '}
-              <span>Diced Tomatoes</span>
+              <span>Diced Tomatoes (0.99 $)</span>
               <br />
             </div>
             <div key="LETC">
@@ -189,7 +195,7 @@ export default function Taco() {
                 checked={inputs.LETC || false}
                 onChange={handleChange}
               />{' '}
-              <span>Lettuce</span>
+              <span>Lettuce (0.99 $)</span>
               <br />
             </div>
           </div>
@@ -205,7 +211,7 @@ export default function Taco() {
                 checked={inputs.CHED || false}
                 onChange={handleChange}
               />{' '}
-              <span>Cheddar</span>
+              <span>Cheddar (0.99 $)</span>
               <br />
             </div>
             <div key="JACK">
@@ -217,7 +223,7 @@ export default function Taco() {
                 checked={inputs.JACK || false}
                 onChange={handleChange}
               />{' '}
-              <span>Monterrey Jack</span>
+              <span>Monterrey Jack (0.99 $)</span>
               <br />
             </div>
           </div>
@@ -233,7 +239,7 @@ export default function Taco() {
                 checked={inputs.SLSA || false}
                 onChange={handleChange}
               />{' '}
-              <span>Salsa</span>
+              <span>Salsa (0.99 $)</span>
               <br />
             </div>
             <div key="SRCR">
@@ -245,7 +251,35 @@ export default function Taco() {
                 checked={inputs.SRCR || false}
                 onChange={handleChange}
               />{' '}
-              <span>Sour Cream</span>
+              <span>Sour Cream (0.99 $)</span>
+              <br />
+            </div>
+          </div>
+
+          <div className="ingredient-group" id="sauce">
+            <h3 className="text-lg/6 font-bold">Select your drinks</h3>
+            <div key="BEER">
+              <input
+                id="11"
+                type="checkbox"
+                value="11"
+                name="BEER"
+                checked={inputs.BEER || false}
+                onChange={handleChange}
+              />{' '}
+              <span>Beer (1.99 $)</span>
+              <br />
+            </div>
+            <div key="COCA">
+              <input
+                id="12"
+                type="checkbox"
+                value="12"
+                name="COCA"
+                checked={inputs.COCA || false}
+                onChange={handleChange}
+              />{' '}
+              <span>Coca Cola (1.99 $)</span>
               <br />
             </div>
           </div>
