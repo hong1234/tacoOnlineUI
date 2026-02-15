@@ -43,17 +43,30 @@ export default function OrderForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(inputs);
-    mutate(inputs);
+    if (
+      inputs?.deliveryName !== undefined &&
+      inputs?.deliveryStreet !== undefined &&
+      inputs?.deliveryCity !== undefined &&
+      inputs?.ccNumber !== undefined
+    ) {
+      mutate(inputs);
+    }
+    // else {
+    //   alert('please full fill the form!');
+    // }
   };
 
   return (
     <>
+      <h1 className="font-heading text-2xl font-bold">Order your BanhMy creations!</h1>
+      <img className="h-48 w-96 object-contain" src="/images/TacoCloud.png" />
+      <p className="mb-4 text-base text-gray-600">
+        Deliver my BanhMy masterpieces to...
+        <br />
+        Please full fill the form!
+      </p>
       <form onSubmit={handleSubmit}>
-        <h1 className="font-heading text-2xl font-bold">Order your BanhMy creations!</h1>
-        <img className="h-48 w-96 object-contain" src="/images/TacoCloud.png" />
-        <p className="mb-4 text-base text-gray-600">Deliver my BanhMy masterpieces to...</p>
         {/* <input type="hidden" id="uuid" name="uuid" value="xxxxxx"></input> */}
-
         <label htmlFor="deliveryName">
           Name: <br />
           <input

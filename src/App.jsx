@@ -12,7 +12,20 @@ import OrderForm from './OrderForm';
 import Cart from './Cart';
 
 function Home() {
-  return <h1 className="font-heading text-2xl font-bold">Welcome to BanhMy</h1>;
+  return (
+    <>
+      <h1 className="font-heading text-2xl font-bold">Welcome to BanhMy</h1>
+      <br />
+      <Link to="/taco">
+        <button
+          className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+          type="button"
+        >
+          make your first BanhMy
+        </button>
+      </Link>
+    </>
+  );
 }
 
 function App() {

@@ -16,7 +16,7 @@ const Order = () => {
   return order == null ? null : (
     <div className="">
       {/* <img
-        className="col-12 col-sm-4 col-md-4"
+        className="col-12 col-sm-4 col-md-4" 
         src={product.image}
         alt="photo"
       /> */}
@@ -26,9 +26,10 @@ const Order = () => {
       <div className="">
         {/* <h3>Order-Id: {order.id}</h3> */}
         <h1 className="font-heading text-2xl font-bold">Thank for your Order</h1>
-        Order-ID: {order.uuid}
-        <br />
-        ordered at: {order.placedAt}
+        ordered at: {order.placedAt} <br />
+        OrderID: {order.uuid}
+        {/* <br />
+        {order.uuid} */}
         <br />
         <br />
         <p className="font-bold">Kunde: {order.deliveryName}</p>

@@ -44,7 +44,7 @@ const Cart = () => {
   return cart == null ? null : (
     <div className="">
       {/* <img
-        className="col-12 col-sm-4 col-md-4"
+        className="col-12 col-sm-4 col-md-4" 
         src={product.image}
         alt="photo"
       /> */}
@@ -53,7 +53,7 @@ const Cart = () => {
       <div className="">
         <h1 className="font-heading text-2xl font-bold">Cart</h1>
         {/* Cart-ID={cart.id} | uuID={cart.uuid} */}
-        Cart-ID: {cart.uuid}
+        CartID: {cart.uuid}
         <br />
         <br />
         {
@@ -89,7 +89,7 @@ const Cart = () => {
               </div>
               <br />
               <Link to="/taco">
-                <p className="md-4 font-bold text-gray-600 underline">make more BanhMy</p>
+                <p className="md-4 font-bold text-gray-600 underline">make one more</p>
               </Link>
               <br />
               <button
@@ -106,7 +106,7 @@ const Cart = () => {
                 className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
                 type="button"
               >
-                make your BanhMy
+                make your first BanhMy
               </button>
             </Link>
           )
