@@ -13,7 +13,7 @@ const Order = () => {
     return <div className="mx-auto mt-6 w-96">Loading ...</div>;
   }
 
-  return order == null ? null : (
+  return (
     <div className="">
       {/* <img
         className="col-12 col-sm-4 col-md-4" 
@@ -27,7 +27,8 @@ const Order = () => {
         {/* <h3>Order-Id: {order.id}</h3> */}
         <h1 className="font-heading text-2xl font-bold">Thank for your Order</h1>
         ordered at: {order.placedAt} <br />
-        OrderID: {order.uuid}
+        OrderID: <strong>{order.uuid}</strong>
+        {/* OrderID: <strong>{order.uuid.substring(order.uuid.length - 12)}</strong> */}
         {/* <br />
         {order.uuid} */}
         <br />
@@ -42,7 +43,11 @@ const Order = () => {
         <br />
         {order.items.map((item) => (
           <div key={item.id}>
-            <h4>BanhMy-ID: {item.id}</h4>
+            BanhMy-ID: {item.id} <br />
+            Quantity: {item.qty} <br />
+            UnitPrice: {item.unitPrice} $<br />
+            SumPrice: {item.sumPrice} $<br />
+            Ingredients:
             {item.ingredients
               .sort((a, b) => a.id - b.id)
               .map((ing) => (

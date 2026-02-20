@@ -34,21 +34,18 @@ function App() {
       {/* <Header />
       <Outlet /> */}
       <header className="bg-blue-500 p-4">
-        <nav className="items-center justify-between p-2 font-bold text-white">
+        {/* <nav className="items-center justify-between p-2 font-bold text-white"> */}
+        <nav className="items-center font-bold text-white">
           <Link to="/">Home</Link> | <Link to="/taco">BanhMy</Link> | <Link to="/cart">Cart</Link>
-          {/* <Link to="/order/1">Order</Link> | <Link to="/form">Form</Link> */}
         </nav>
       </header>
       <main className="flex-grow p-4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/taco" element={<Taco />} />
-          {/* <Route path="/taco/:tacoId" element={<Detail />} /> */}
           <Route path="/cart" element={<Cart />} />
-          {/* <Route path="/cart/:cartId" element={<Cart />} /> */}
           <Route path="/order" element={<OrderForm />} />
           <Route path="/order/:orderId" element={<Order />} />
-          {/* <Route path="/form" element={<MyForm />} /> */}
         </Routes>
       </main>
       <footer className="bg-gray-300 p-4">Tommy Co Ltd</footer>

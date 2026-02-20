@@ -117,7 +117,7 @@ export default function Taco() {
       <form onSubmit={handleSubmit}>
         <div className="grid">
           <div className="ingredient-group" id="wrap">
-            <h3 className="text-lg/6 font-bold">Designate your wrap</h3>
+            <strong>Designate your wrap</strong>
             <div key="FLTO">
               <input
                 id="1"
@@ -145,7 +145,7 @@ export default function Taco() {
           </div>
 
           <div className="ingredient-group" id="protein">
-            <h3 className="text-lg/6 font-bold">Pick your protein</h3>
+            <strong>Pick your protein</strong>
             <div key="GRBF">
               <input
                 id="3"
@@ -173,7 +173,7 @@ export default function Taco() {
           </div>
 
           <div className="ingredient-group" id="veggies">
-            <h3 className="text-lg/6 font-bold">Determine your veggies</h3>
+            <strong>Determine your veggies</strong>
             <div key="TMTO">
               <input
                 id="5"
@@ -201,7 +201,7 @@ export default function Taco() {
           </div>
 
           <div className="ingredient-group" id="cheese">
-            <h3 className="text-lg/6 font-bold">Choose your cheese</h3>
+            <strong>Choose your cheese</strong>
             <div key="CHED">
               <input
                 id="7"
@@ -229,7 +229,7 @@ export default function Taco() {
           </div>
 
           <div className="ingredient-group" id="sauce">
-            <h3 className="text-lg/6 font-bold">Select your sauce</h3>
+            <strong>Select your sauce</strong>
             <div key="SLSA">
               <input
                 id="9"
@@ -257,7 +257,7 @@ export default function Taco() {
           </div>
 
           <div className="ingredient-group" id="sauce">
-            <h3 className="text-lg/6 font-bold">Select your drinks</h3>
+            <strong>and perhaps a drink</strong>
             <div key="BEER">
               <input
                 id="11"

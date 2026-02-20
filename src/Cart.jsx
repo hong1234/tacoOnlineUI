@@ -61,10 +61,10 @@ const Cart = () => {
             <div>
               <div className="grid gap-4 md:grid-cols-3">
                 {cart.tacos.map((taco) => (
-                  <div key={taco.id} className="relative rounded-xl border p-8">
-                    <h4 className="font-bold">BanhMy-ID: {taco.id}</h4>
+                  <div key={taco.id} className="relative rounded-md border p-2">
+                    BanhMy-ID: {taco.id} <br />
                     Quantity: {taco.qty} <br />
-                    {/* UnitPrice: {taco.unitPrice} $ <br /> */}
+                    UnitPrice: {taco.unitPrice} $<br />
                     Ingredients:
                     {taco.ingredients
                       .sort((a, b) => a.id - b.id)
