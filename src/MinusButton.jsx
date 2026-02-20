@@ -2,7 +2,7 @@ import { getCartUuid } from './api/cartUuid';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { qtyUpdate } from './api/qtyUpdate';
 
-export default function AddButton({ tacoID }) {
+export default function MinusButton({ tacoID }) {
   const queryClient = useQueryClient();
 
   const { mutate } = useMutation({
@@ -16,12 +16,12 @@ export default function AddButton({ tacoID }) {
     },
   });
 
-  const add = (e) => {
+  const minus = (e) => {
     e.preventDefault();
     // if (isLogin()) {
     mutate({
       uuid: getCartUuid(),
-      modus: 'add',
+      modus: 'remove',
       tacoId: tacoID,
     });
     // } else {
@@ -31,8 +31,8 @@ export default function AddButton({ tacoID }) {
 
   return (
     <>
-      <button className="" type="button" onClick={add}>
-        <strong>(+ 1)</strong>
+      <button className="" type="button" onClick={minus}>
+        <strong>[- 1]</strong>
       </button>
     </>
   );

@@ -36,9 +36,9 @@ const Order = () => {
           Adresse: {order.deliveryStreet} - {order.deliveryCity} <br />
           Tel-Nummer: {order.ccNumber} <br />
           <br />
-          <p className="font-bold">Total-Price: {order.totalPrice}</p>
-          Items-Price: {order.itemsPrice} <br />
-          Shipment-Price: {order.shipmentPrice} <br />
+          <p className="font-bold">Total-Price: {order.totalPrice} $</p>
+          Items-Price: {order.itemsPrice} $<br />
+          Shipment-Price: {order.shipmentPrice} $<br />
           <br />
           {order.items.map((item) => (
             <div key={item.id}>
