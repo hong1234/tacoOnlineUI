@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router';
 import { getCartUuid } from './api/cartUuid';
 import { useQuery } from '@tanstack/react-query';
 import { getCart } from './api/getCart';
+import AddButton from './AddButton';
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -63,7 +64,8 @@ const Cart = () => {
                 {cart.tacos.map((taco) => (
                   <div key={taco.id} className="relative rounded-md border p-2">
                     BanhMy-ID: {taco.id} <br />
-                    Quantity: {taco.qty} <br />
+                    Quantity: {taco.qty} <AddButton tacoID={taco.id} />
+                    <br />
                     UnitPrice: {taco.unitPrice} $<br />
                     Ingredients:
                     {taco.ingredients
