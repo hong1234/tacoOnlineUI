@@ -65,8 +65,15 @@ const Cart = () => {
                 {cart.tacos.map((taco) => (
                   <div key={taco.id} className="relative rounded-md border p-2">
                     BanhMy-ID: {taco.id} <br />
-                    Quantity: {taco.qty} <PlusButton tacoID={taco.id} />{' '}
-                    <MinusButton tacoID={taco.id} />
+                    Quantity: <strong>{taco.qty}</strong>
+                    &nbsp;&nbsp;
+                    <PlusButton tacoID={taco.id} />
+                    {taco.qty > 1 ? (
+                      <>
+                        &nbsp;&nbsp;
+                        <MinusButton tacoID={taco.id} />
+                      </>
+                    ) : null}
                     <br />
                     UnitPrice: {taco.unitPrice} $<br />
                     Ingredients:

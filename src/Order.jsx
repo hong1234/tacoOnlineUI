@@ -28,7 +28,7 @@ const Order = () => {
         <div className="">
           <h1 className="font-heading text-2xl font-bold">Thank for your Order</h1>
           ordered at: {order.placedAt} <br />
-          OrderID: <strong>{order.uuid}</strong>
+          <strong className="font-bold">OrderID:</strong> {order.uuid}
           {/* OrderID: <strong>{order.uuid.substring(order.uuid.length - 12)}</strong> */}
           <br />
           <br />

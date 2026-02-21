@@ -32,7 +32,19 @@ export default function MinusButton({ tacoID }) {
   return (
     <>
       <button className="" type="button" onClick={minus}>
-        <strong>[- 1]</strong>
+        <svg
+          className="text-themeColor-500 h-4 w-4"
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          {' '}
+          <circle cx="11" cy="11" r="8" /> <line x1="21" y1="21" x2="16.65" y2="16.65" />{' '}
+          <line x1="8" y1="11" x2="14" y2="11" />
+        </svg>
       </button>
     </>
   );
