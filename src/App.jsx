@@ -5,28 +5,11 @@
 import { Outlet, Routes, Route, Link } from 'react-router';
 // import { Header } from "./Header";
 // import { MyForm } from "./MyForm";
-// import Detail from "./Detail";
+import Home from './Home';
 import Taco from './Taco';
 import Order from './Order';
 import OrderForm from './OrderForm';
 import Cart from './Cart';
-
-function Home() {
-  return (
-    <>
-      <h1 className="font-heading text-2xl font-bold">Welcome to BanhMy</h1>
-      <br />
-      <Link to="/taco">
-        <button
-          className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-          type="button"
-        >
-          let make your BanhMy
-        </button>
-      </Link>
-    </>
-  );
-}
 
 function App() {
   return (
@@ -34,12 +17,12 @@ function App() {
       {/* <Header />
       <Outlet /> */}
       <header className="bg-blue-500 p-4">
-        {/* <nav className="items-center justify-between p-2 font-bold text-white"> */}
-        <nav className="items-center font-bold text-white">
-          <Link to="/">Home</Link> | <Link to="/taco">BanhMy</Link> | <Link to="/cart">Cart</Link>
+        <nav className="font-bold text-white">
+          <Link to="/">Home</Link> &nbsp;&nbsp; <Link to="/taco">BanhMy</Link> &nbsp;&nbsp;{' '}
+          <Link to="/cart">Cart</Link>
         </nav>
       </header>
-      <main className="flex-grow p-4">
+      <main className="grow p-4 text-justify">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/taco" element={<Taco />} />

@@ -23,7 +23,7 @@ export default function OrderForm() {
       // queryClient.invalidateQueries(["products"]);
       // setInputs({}); // clear form
       refreshCartUuid();
-      console.log(getCartUuid());
+      // console.log(getCartUuid());
 
       navigate('/order/' + resdata.uuid);
     },
@@ -59,7 +59,7 @@ export default function OrderForm() {
   return (
     <>
       <h1 className="font-heading text-2xl font-bold">Order your BanhMy creations!</h1>
-      <img className="h-48 w-96 object-contain" src="/images/TacoCloud.png" />
+      <img className="h-40 w-60 object-contain" src="/images/TacoCloud.png" />
       <p className="mb-4 text-base text-gray-600">
         Deliver my BanhMy masterpieces to...
         <br />
@@ -97,7 +97,6 @@ export default function OrderForm() {
             onChange={handleChange}
           />
         </label>
-        {/* <h3>Here's how I'll pay...</h3> */}
         <label htmlFor="ccNumber">
           Tel-Nummer:
           <input

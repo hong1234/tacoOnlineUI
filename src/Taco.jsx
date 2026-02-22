@@ -113,11 +113,12 @@ export default function Taco() {
   return (
     <>
       <h1 className="font-heading text-2xl font-bold">Design your BanhMy!</h1>
-      <img className="h-48 w-96 object-contain" src="/images/TacoCloud.png" />
+      <img className="h-40 w-60 object-contain" src="/images/TacoCloud.png" />
+
       <form onSubmit={handleSubmit}>
         <div className="grid">
           <div className="ingredient-group" id="wrap">
-            <strong>Designate your wrap</strong>
+            <strong className="font-bold">Designate your wrap</strong>
             <div key="FLTO">
               <input
                 id="1"
@@ -145,7 +146,7 @@ export default function Taco() {
           </div>
 
           <div className="ingredient-group" id="protein">
-            <strong>Pick your protein</strong>
+            <strong className="font-bold">Pick your protein</strong>
             <div key="GRBF">
               <input
                 id="3"
@@ -173,7 +174,7 @@ export default function Taco() {
           </div>
 
           <div className="ingredient-group" id="veggies">
-            <strong>Determine your veggies</strong>
+            <strong className="font-bold">Determine your veggies</strong>
             <div key="TMTO">
               <input
                 id="5"
@@ -201,7 +202,7 @@ export default function Taco() {
           </div>
 
           <div className="ingredient-group" id="cheese">
-            <strong>Choose your cheese</strong>
+            <strong className="font-bold">Choose your cheese</strong>
             <div key="CHED">
               <input
                 id="7"
@@ -229,7 +230,7 @@ export default function Taco() {
           </div>
 
           <div className="ingredient-group" id="sauce">
-            <strong>Select your sauce</strong>
+            <strong className="font-bold">Select your sauce</strong>
             <div key="SLSA">
               <input
                 id="9"
@@ -257,7 +258,7 @@ export default function Taco() {
           </div>
 
           <div className="ingredient-group" id="sauce">
-            <strong>and perhaps a drink</strong>
+            <strong className="font-bold">and perhaps a drink</strong>
             <div key="BEER">
               <input
                 id="11"
@@ -293,7 +294,7 @@ export default function Taco() {
             onChange={handleChange}
           /> */}
           <br />
-          <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
+          <button className="rounded bg-blue-500 px-2 py-2 font-bold text-white hover:bg-blue-700">
             Add Your BanhMy to Cart
           </button>
           <br />
