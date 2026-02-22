@@ -16,13 +16,13 @@ function App() {
     <div className="flex min-h-screen flex-col">
       {/* <Header />
       <Outlet /> */}
-      <header className="bg-blue-500 p-4">
+      <header className="bg-blue-500 p-6">
         <nav className="font-bold text-white">
           <Link to="/">Home</Link> &nbsp;&nbsp; <Link to="/taco">BanhMy</Link> &nbsp;&nbsp;{' '}
           <Link to="/cart">Cart</Link>
         </nav>
       </header>
-      <main className="grow p-4 text-justify">
+      <main className="grow p-6 text-justify">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/taco" element={<Taco />} />
@@ -31,7 +31,7 @@ function App() {
           <Route path="/order/:orderId" element={<Order />} />
         </Routes>
       </main>
-      <footer className="bg-gray-300 p-4">Tommy Co Ltd</footer>
+      <footer className="bg-gray-300 p-6">Tommy Co Ltd</footer>
     </div>
   );
 }

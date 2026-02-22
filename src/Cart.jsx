@@ -61,9 +61,10 @@ const Cart = () => {
         {
           cart.tacos.length > 0 ? (
             <div>
-              <div className="grid gap-4 md:grid-cols-3">
+              {/* <div className="grid gap-4 md:grid-cols-3"> */}
+              <div className="flex flex-col gap-2 lg:w-1/3">
                 {cart.tacos.map((taco) => (
-                  <div key={taco.id} className="relative rounded-md border p-2">
+                  <div key={taco.id} className="relative rounded-md border px-4 py-2">
                     BanhMy-ID: {taco.id} <br />
                     Quantity: <strong>{taco.qty}</strong>
                     &nbsp;&nbsp;
@@ -105,7 +106,7 @@ const Cart = () => {
               <br />
               <button
                 type="button"
-                className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+                className="rounded bg-blue-500 px-2 py-2 font-bold text-white hover:bg-blue-700"
                 onClick={checkout}
               >
                 Checkout
@@ -114,7 +115,7 @@ const Cart = () => {
           ) : (
             <Link to="/taco">
               <button
-                className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+                className="rounded bg-blue-500 px-2 py-2 font-bold text-white hover:bg-blue-700"
                 type="button"
               >
                 make your first BanhMy
