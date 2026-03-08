@@ -1,19 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
+import { reqOptions } from './reqOptions';
 
-const cartUrl = "http://localhost:8000/api/v1/cart/";
+const cartUrl = 'http://localhost:8000/api/v1/cart/';
 
 export const getCart = async (cartId) => {
-  const options = {
-    headers: {
-      // 'Content-Type': 'application/json'
-      Accept: "application/json",
-    },
-    auth: {
-      username: "admin",
-      password: "admin",
-    },
-  };
-
-  const res = await axios.get(`${cartUrl}${cartId}`, options);
+  const res = await axios.get(`${cartUrl}${cartId}`, reqOptions());
   return res.data;
 };

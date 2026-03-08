@@ -1,18 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
+import { reqOptions } from './reqOptions';
 
-const orderUrl = "http://localhost:8000/api/v1/cart/checkout";
+const orderUrl = 'http://localhost:8000/api/v1/cart/checkout';
 
 export async function saveOrder(order) {
-  const options = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    auth: {
-      username: "admin",
-      password: "admin",
-    },
-  };
-
-  const res = await axios.post(`${orderUrl}`, order, options);
+  const res = await axios.post(`${orderUrl}`, order, reqOptions());
   return res.data;
 }

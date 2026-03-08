@@ -1,19 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
+import { reqOptions } from './reqOptions';
 
-const tacoUrl = "http://localhost:8000/api/v1/taco/";
+const tacoUrl = 'http://localhost:8000/api/v1/taco/';
 
 export const getTaco = async (tacoId) => {
-  const options = {
-    headers: {
-      // 'Content-Type': 'application/json'
-      Accept: "application/json",
-    },
-    auth: {
-      username: "admin",
-      password: "admin",
-    },
-  };
-
-  const res = await axios.get(`${tacoUrl}${tacoId}`, options);
+  const res = await axios.get(`${tacoUrl}${tacoId}`, reqOptions());
   return res.data;
 };
